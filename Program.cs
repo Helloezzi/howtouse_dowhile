@@ -14,7 +14,7 @@ namespace dowhile
             {
                 i++;
                 Console.WriteLine($"{i}");
-            }while(i < 10);
+            }while(i > 10);
             Console.WriteLine("end");
         }
 
@@ -22,10 +22,10 @@ namespace dowhile
         {
             using (var stream = await msg.Content.ReadAsStreamAsync()) 
             {
-                var totalRead = 0;
+                int totalRead = 0;
                 var buffer = new byte[1024];
-                var isMoreRead = true;
-                
+                bool isMoreRead = true;
+
                 do 
                 {
                     var read = await stream.ReadAsync(buffer, 0, buffer.Length);
